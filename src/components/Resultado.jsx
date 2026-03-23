@@ -1,3 +1,5 @@
+import '../css/global.css'
+import '../css/resultado.css'
 import React from 'react'
 
 // Desestruturação Do resultado para pegar o valor

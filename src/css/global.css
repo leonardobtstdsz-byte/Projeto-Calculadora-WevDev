@@ -1,0 +1,25 @@
+/* variaveis globais*/
+/* variaveis globais */
+:root{
+    --fontColor:#fff;
+    --fontColor1:#000;
+    --bgColor1:#2d30f0;
+    --bgColor2:#f1e9e9;
+}
+body{
+    background: var(--bgColor2)
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    align-items:center;
+    justify-content:center;
+}
+@media (max-width: 500px){
+    .container{
+        justify-content:start;
+        padding:15px;
+    }
+}

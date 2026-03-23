@@ -1,6 +1,8 @@
 import { useEffect,useState } from 'react'
 import Header from "./components/Header"
 import Resultado from "./components/Resultado"
+import './css/global.css'
+import './css/estilo.css'
 
 function App() {
   //Hooks - usestates - manipula o resultado da variavel
@@ -23,7 +25,7 @@ function App() {
    //EFEITO COLATERAL PARA MOSTRAR O RESULTADO
   useEffect(()=>{
     //condicional ternaria , se o resultado for maior que 0 mostra na tela
-    resultado > 0 ? setMostrarResultado(true) : setMostrarResultado(false)
+    resultado > 0 ? setMostrarResultado(true): setMostrarResultado(false)
     //o efeito só executa quando a variavel resultado for altera
   },[resultado])
 
@@ -45,7 +47,7 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="peso">Altura<span>(ex: 88kg)</span></label>
+            <label htmlFor="peso">Peso<span>(ex: 88kg)</span></label>
             <input
               id="peso"
               type="number"
@@ -56,11 +58,14 @@ function App() {
           <button type="button" onClick={calcularIMC}>calcular</button>
        </form>
     </div>
-    (mostrarresultado &&(
-      resultado resultado=(resultado.tofixed(2))
-    ))
-    <Resultado/>
+    {mostrarresultado &&(
+        //Envia o valor do resultado com 2 casas decimais via props para o componente resultado
+        <Resultado resultado={resultado.toFixed(2)}/>
+      )}
+  
+
     </section>
   )
 }
+
 export default App
